@@ -33,6 +33,13 @@
     localNotification.alertBody = @"Hello there!";
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 10;
+    
+    UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"Notification"    message:@"This local notification" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    
+    [notificationAlert show];
+    
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 @end
