@@ -28,21 +28,21 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
-    int fromNumber = 1;
-    int toNumber = 5;
+    int fromNumber = 0;
+    int toNumber = 2;
     int randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
     
     
-    NSString * f = @"foo";
-    NSString * b = @"bar";
-    NSString * z = @"baz";
+    NSString * f = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد قطب السيادة والمجد والفخار ، وخير من تهجد لربه آناء الليل وأطراف النهار .";
+    NSString * b = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد عين سر الوجود بلسان كل معدوم وموجود ، من حباه الله وأكرمه بمنةٍ وعطاءٍ وفضلٍ وجودٍ .";
+    NSString * z = @"اللهم صلِّ وسلم وبارك على سيدنامحمد وعلى آل سيدنا محمد خير من أقتبست منه بدور الكائنات ضياءها ، وبه سائر المخلوقات لم تقطع من الله يوم القيامة رجاءها .";
     NSArray  * myArray2 = [NSArray arrayWithObjects:f,b,z,nil];
     
-    NSLog(@"The element at index %d in the array is: %@", randomNumber, [myArray2 objectAtIndex:1]);
+    NSLog(@"The element at index %d in the array is: %@", randomNumber, [myArray2 objectAtIndex:randomNumber]);
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    localNotification.alertBody = @"Hello there!";
+    localNotification.alertBody = [myArray2 objectAtIndex:randomNumber];
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     
     localNotification.soundName = UILocalNotificationDefaultSoundName;
