@@ -28,6 +28,18 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
+    int fromNumber = 1;
+    int toNumber = 5;
+    int randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
+    
+    
+    NSString * f = @"foo";
+    NSString * b = @"bar";
+    NSString * z = @"baz";
+    NSArray  * myArray2 = [NSArray arrayWithObjects:f,b,z,nil];
+    
+    NSLog(@"The element at index %d in the array is: %@", randomNumber, [myArray2 objectAtIndex:1]);
+    
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
     localNotification.alertBody = @"Hello there!";
