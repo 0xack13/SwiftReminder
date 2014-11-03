@@ -32,12 +32,15 @@
     NSString * b = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد عين سر الوجود بلسان كل معدوم وموجود ، من حباه الله وأكرمه بمنةٍ وعطاءٍ وفضلٍ وجودٍ .";
     NSString * z = @"اللهم صلِّ وسلم وبارك على سيدنامحمد وعلى آل سيدنا محمد خير من أقتبست منه بدور الكائنات ضياءها ، وبه سائر المخلوقات لم تقطع من الله يوم القيامة رجاءها .";
     NSArray  * myArray2 = [NSArray arrayWithObjects:f,b,z, NULL];
+    
+    //Get the size (count) of the Array
     NSLog(@"Number of Elements in the Array is: %d", [myArray2 count]);
     
     int fromNumber = 0;
     int toNumber = [myArray2 count] - 1;
     int randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
     
+    //Printing Random Elements in the Array
     NSLog(@"The element at index %d in the array is: %@", randomNumber, [myArray2 objectAtIndex:randomNumber]);
     
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
