@@ -31,7 +31,8 @@
     NSString * f = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد قطب السيادة والمجد والفخار ، وخير من تهجد لربه آناء الليل وأطراف النهار .";
     NSString * b = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد عين سر الوجود بلسان كل معدوم وموجود ، من حباه الله وأكرمه بمنةٍ وعطاءٍ وفضلٍ وجودٍ .";
     NSString * z = @"اللهم صلِّ وسلم وبارك على سيدنامحمد وعلى آل سيدنا محمد خير من أقتبست منه بدور الكائنات ضياءها ، وبه سائر المخلوقات لم تقطع من الله يوم القيامة رجاءها .";
-    NSArray  * myArray2 = [NSArray arrayWithObjects:f,b,z, NULL];
+    NSString * c = @" اللهم صل وسلم على سيدنا محمد البشير المُبَشِّر للعاملين بما قال الله العظيم (أنِّي لاَ أُضِيعُ عَمَلَ عَامِلٍ مِّنكُم مِّن ذَكَرٍ أَوْ أُنثَى) وبما قال (مَنْ عَمِلَ صَالِحًا مِّن ذَكَرٍ أَوْ أُنثَى وَهُوَ مُؤْمِنٌ فَأُوْلَئِكَ يَدْخُلُونَ الْجَنَّةَ يُرْزَقُونَ فِيهَا بِغَيْرِ حِسَابٍ).";
+    NSArray  * myArray2 = [NSArray arrayWithObjects:f,b,z,c, NULL];
     
     /*
      
@@ -69,6 +70,9 @@
     UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"SALAWAT"    message:[myArray2 objectAtIndex:randomNumber] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     
     [notificationAlert show];
+    
+    [notificationAlert dismissWithClickedButtonIndex:0 animated:TRUE];
+
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
