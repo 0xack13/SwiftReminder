@@ -33,6 +33,34 @@
 
 
 - (IBAction)buttonPressed:(id)sender {
+    
+    /*
+     Repeat daily at 5pm:
+     
+     
+     NSDateFormatter *dat= [[NSDateFormatter alloc]init];
+     [dat setLocale:[NSLocale currentLocale]];
+     [dat setTimeZone:[NSTimeZone systemTimeZone]];
+     
+     //[dat setDateFormat:@"YYYY-MM-dd"];// YYYY-MM-dd hh:mm a
+     //NSString *dateM=[dat stringFromDate:datM];
+     //[dat setDateFormat:@"YYYY-MM-dd h:mm a"];
+     NSDate *reminderDate=[NSDate date];
+     reminderDate =[reminderDate dateByAddingTimeInterval:1*24*60*60];
+     
+     UILocalNotification  *missingDreamNotify=[[UILocalNotification alloc]init];
+     missingDreamNotify.fireDate=reminderDate;
+     missingDreamNotify.timeZone = [NSTimeZone defaultTimeZone];
+     missingDreamNotify.alertBody = @"Reminder is set";
+     missingDreamNotify.alertAction = @"Show me";
+     missingDreamNotify.soundName = UILocalNotificationDefaultSoundName;
+     missingDreamNotify.applicationIconBadgeNumber = 1;
+     missingDreamNotify.repeatInterval = NSDayCalendarUnit;
+     
+     [[UIApplication sharedApplication] scheduleLocalNotification:missingDreamNotify];
+     
+     
+     */
     NSString * f = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد قطب السيادة والمجد والفخار ، وخير من تهجد لربه آناء الليل وأطراف النهار .";
     NSString * b = @"اللهم صلِّ وسلم وبارك على سيدنا محمد وعلى آل سيدنا محمد عين سر الوجود بلسان كل معدوم وموجود ، من حباه الله وأكرمه بمنةٍ وعطاءٍ وفضلٍ وجودٍ .";
     NSString * z = @"اللهم صلِّ وسلم وبارك على سيدنامحمد وعلى آل سيدنا محمد خير من أقتبست منه بدور الكائنات ضياءها ، وبه سائر المخلوقات لم تقطع من الله يوم القيامة رجاءها .";
