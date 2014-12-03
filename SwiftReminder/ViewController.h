@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+
 @end
+
+NSTimer *alertTimer;
