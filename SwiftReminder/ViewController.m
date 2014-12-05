@@ -21,10 +21,14 @@
 	
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
     NSLog(@"dictionary = %@", dictionary);
+    
+    NSArray * allKeys = [dictionary allKeys];
+    NSLog(@"Count : %d", [allKeys count]);
+    
     NSArray *array = [dictionary objectForKey:@"3"];
     NSLog(@"array = %@", array);
     
-    NSString *msg= [dictionary valueForKey:@"3"];
+    NSString *msg= [dictionary valueForKey:@"4"];
     
     
     UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"SALAWAT"    message:msg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
