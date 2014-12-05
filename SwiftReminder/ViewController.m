@@ -18,7 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
+    NSLog(@"dictionary = %@", dictionary);
+    NSArray *array = [dictionary objectForKey:@"Root"];
+    NSLog(@"array = %@", array);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +71,8 @@
     NSString * z = @"اللهم صلِّ وسلم وبارك على سيدنامحمد وعلى آل سيدنا محمد خير من أقتبست منه بدور الكائنات ضياءها ، وبه سائر المخلوقات لم تقطع من الله يوم القيامة رجاءها .";
     NSString * c = @" اللهم صل وسلم على سيدنا محمد البشير المُبَشِّر للعاملين بما قال الله العظيم (أنِّي لاَ أُضِيعُ عَمَلَ عَامِلٍ مِّنكُم مِّن ذَكَرٍ أَوْ أُنثَى) وبما قال (مَنْ عَمِلَ صَالِحًا مِّن ذَكَرٍ أَوْ أُنثَى وَهُوَ مُؤْمِنٌ فَأُوْلَئِكَ يَدْخُلُونَ الْجَنَّةَ يُرْزَقُونَ فِيهَا بِغَيْرِ حِسَابٍ).";
     NSArray  * myArray2 = [NSArray arrayWithObjects:f,b,z,c, NULL];
+    
+    
     
     //Get the size (count) of the Array
     NSLog(@"Number of Elements in the Array is: %d", [myArray2 count]);
