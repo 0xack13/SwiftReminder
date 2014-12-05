@@ -18,6 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /*
 	
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
     NSLog(@"dictionary = %@", dictionary);
@@ -28,17 +30,84 @@
     NSArray *array = [dictionary objectForKey:@"3"];
     NSLog(@"array = %@", array);
     
-    NSString *msg= [dictionary valueForKey:@"4"];
+    int fromNumber = 0;
+    int toNumber = [allKeys count] - 1;
+    int randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
+    NSString *string = [NSString stringWithFormat:@"%d", randomNumber];
+
+    NSString *msg= [dictionary valueForKey:string];
     
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+    localNotification.alertBody = @"Testing";
+    localNotification.alertAction = @"View"; //title of action button
+    localNotification.hasAction = YES;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
     
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 10;
+    localNotification.repeatInterval = NSSecondCalendarUnit;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    /*
     UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"SALAWAT"    message:msg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     /*
     for (NSString *s in array) {
         [notificationAlert addButtonWithTitle:s];
     }*/
     
-    [notificationAlert show];
+    //[notificationAlert show];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self setupLocalNotifications];
+}
+
+- (void)setupLocalNotifications {
+    
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
+    NSLog(@"dictionary = %@", dictionary);
+    
+    NSArray * allKeys = [dictionary allKeys];
+    NSLog(@"Count : %d", [allKeys count]);
+    
+    NSArray *array = [dictionary objectForKey:@"3"];
+    NSLog(@"array = %@", array);
+    
+    int fromNumber = 0;
+    int toNumber = [allKeys count] - 1;
+    int randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
+    NSString *string = [NSString stringWithFormat:@"%d", randomNumber];
+    
+    NSString *msg= [dictionary valueForKey:string];
+
+    
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    
+    // current time plus 10 secs
+    NSDate *now = [NSDate date];
+    NSDate *date = [now dateByAddingTimeInterval:5];
+    
+    NSLog(@"now time: %@", now);
+    //NSLog(@"fire time: %@", dateToFire);
+    
+    for (int i = 0; i < 10; i++){
+    NSDate *repeatTime = [date dateByAddingTimeInterval:4 * i];
+    localNotification.fireDate = repeatTime; //dateToFire;
+    localNotification.alertBody = msg; //@"Time to get up!";
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 1; // increment
+    localNotification.repeatInterval = NSSecondCalendarUnit;
+
+    
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Object 1", @"Key 1", @"Object 2", @"Key 2", nil];
+    localNotification.userInfo = infoDict;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,6 +10,7 @@
 
 @implementation AppDelegate
 
+/*
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -19,7 +20,7 @@
         [application cancelAllLocalNotifications];
     }
     return YES;
-}
+}*/
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -28,14 +29,43 @@
 }
 
 // This code block is invoked when application is in foreground (active-mode)
+/*
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
     UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"Notification"    message:@"This local notification" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     
     [notificationAlert show];
     // NSLog(@"didReceiveLocalNotification");
+}*/
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    
+    if (notification) {
+        [self showAlarm:notification.alertBody];
+        NSLog(@"AppDelegate didFinishLaunchingWithOptions");
+        application.applicationIconBadgeNumber = 0;
+    }
+    
+    [self.window makeKeyAndVisible];
+    return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [self showAlarm:notification.alertBody];
+    application.applicationIconBadgeNumber = 0;
+    NSLog(@"AppDelegate didReceiveLocalNotification %@", notification.userInfo);
+}
+
+- (void)showAlarm:(NSString *)text {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alarm"
+                                                        message:text delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
