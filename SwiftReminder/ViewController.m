@@ -21,9 +21,20 @@
 	
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
     NSLog(@"dictionary = %@", dictionary);
-    NSArray *array = [dictionary objectForKey:@"Root"];
+    NSArray *array = [dictionary objectForKey:@"3"];
     NSLog(@"array = %@", array);
-
+    
+    NSString *msg= [dictionary valueForKey:@"3"];
+    
+    
+    UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"SALAWAT"    message:msg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    /*
+    for (NSString *s in array) {
+        [notificationAlert addButtonWithTitle:s];
+    }*/
+    
+    [notificationAlert show];
+    
 }
 
 - (void)didReceiveMemoryWarning
