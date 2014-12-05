@@ -60,12 +60,28 @@
 }
 
 - (void)showAlarm:(NSString *)text {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alarm"
-                                                        message:text delegate:nil
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"App Delegate Alarm"
+                                                        message:text delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
     [alertView show];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *alertselection = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([alertselection isEqualToString:@"Return"]) {
+        NSLog(@"The user select Button 1");
+    }
+    else if([alertselection isEqualToString:@"OK"]) {
+        NSLog(@"The user select Button 2");
+    }
+    else if([alertselection isEqualToString:@"Button 3"]) {
+        NSLog(@"The user select Button 3");
+    }
+}
+
+
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
