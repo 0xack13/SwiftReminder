@@ -74,7 +74,48 @@
         NSLog(@"The user select Button 1");
     }
     else if([alertselection isEqualToString:@"OK"]) {
-        NSLog(@"The user select Button 2");
+        NSLog(@"The user select Ok. I am going to set a new reminder.");
+        
+        NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
+        NSLog(@"dictionary = %@", dictionary);
+        
+        NSArray * allKeys = [dictionary allKeys];
+        NSLog(@"Count : %d", [allKeys count]);
+        
+        NSArray *array = [dictionary objectForKey:@"3"];
+        NSLog(@"array = %@", array);
+        
+        int fromNumber = 0;
+        int toNumber = [allKeys count] - 1;
+        int randomNumber = (arc4random()%(toNumber-fromNumber))+fromNumber;
+        NSString *string = [NSString stringWithFormat:@"%d", randomNumber];
+        
+        NSString *msg= [dictionary valueForKey:string];
+        
+        
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        
+        // current time plus 10 secs
+        NSDate *now = [NSDate date];
+        NSDate *date = [now dateByAddingTimeInterval:2];
+        
+        NSLog(@"now time: %@", now);
+        //NSLog(@"fire time: %@", dateToFire);
+        
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+            localNotification.alertBody = msg; //@"Time to get up!";
+            localNotification.soundName = UILocalNotificationDefaultSoundName;
+            localNotification.applicationIconBadgeNumber = 1; // increment
+            localNotification.repeatInterval = NSSecondCalendarUnit;
+            
+            
+            NSDictionary *infoDict = [NSDictionary dictionaryWithObjectsAndKeys:@"Object 1", @"Key 1", @"Object 2", @"Key 2", nil];
+            localNotification.userInfo = infoDict;
+            
+            [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
     }
     else if([alertselection isEqualToString:@"Button 3"]) {
         NSLog(@"The user select Button 3");

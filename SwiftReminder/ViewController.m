@@ -94,8 +94,7 @@
     NSLog(@"now time: %@", now);
     //NSLog(@"fire time: %@", dateToFire);
     
-    for (int i = 0; i < 10; i++){
-    NSDate *repeatTime = [date dateByAddingTimeInterval:4 * i];
+    NSDate *repeatTime = [date dateByAddingTimeInterval:4];
     localNotification.fireDate = repeatTime; //dateToFire;
     localNotification.alertBody = msg; //@"Time to get up!";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
@@ -107,7 +106,7 @@
     localNotification.userInfo = infoDict;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning
