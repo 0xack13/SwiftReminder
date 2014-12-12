@@ -23,6 +23,7 @@
 		4CE7C22019FB22FB000FF20E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7C20219FB22FB000FF20E /* UIKit.framework */; };
 		4CE7C22819FB22FB000FF20E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CE7C22619FB22FB000FF20E /* InfoPlist.strings */; };
 		4CE7C22A19FB22FB000FF20E /* SwiftReminderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7C22919FB22FB000FF20E /* SwiftReminderTests.m */; };
+		4CF766011A3B31F800BB0673 /* Salawat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CF766001A3B31F800BB0673 /* Salawat.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		4CE7C22519FB22FB000FF20E /* SwiftReminderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftReminderTests-Info.plist"; sourceTree = "<group>"; };
 		4CE7C22719FB22FB000FF20E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CE7C22919FB22FB000FF20E /* SwiftReminderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftReminderTests.m; sourceTree = "<group>"; };
+		4CF766001A3B31F800BB0673 /* Salawat.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Salawat.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		4CE7C1F219FB22FB000FF20E = {
 			isa = PBXGroup;
 			children = (
+				4CF766001A3B31F800BB0673 /* Salawat.txt */,
 				4C7F87021A311D9A0073F5E4 /* Salawat.plist */,
 				4C11B9EE1A3AEE6D001680B8 /* Salawat.rtf */,
 				4CE7C20419FB22FB000FF20E /* SwiftReminder */,
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF766011A3B31F800BB0673 /* Salawat.txt in Resources */,
 				4C7F87031A311D9A0073F5E4 /* Salawat.plist in Resources */,
 				4C11B9EF1A3AEE6D001680B8 /* Salawat.rtf in Resources */,
 				4CE7C21719FB22FB000FF20E /* Images.xcassets in Resources */,
