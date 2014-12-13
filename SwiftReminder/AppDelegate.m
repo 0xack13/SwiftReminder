@@ -60,7 +60,7 @@
 }
 
 - (void)showAlarm:(NSString *)text {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"App Delegate Alarm"
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"صلوات بشائر الخيرات"
                                                         message:text delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
