@@ -6,6 +6,30 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Key</key>
+			<string>multi_preference</string>
+			<key>DefaultValue</key>
+			<string>One</string>
+			<key>Title</key>
+			<string>توقيت التكرار</string>
+			<key>Titles</key>
+			<array>
+				<string>كل نصف ساعه</string>
+				<string>كل ساعه</string>
+				<string>كل ساعتين</string>
+				<string>كل ٣ ساعات</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>30</string>
+				<string>60</string>
+				<string>180</string>
+				<string>360</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>multi value</string>
