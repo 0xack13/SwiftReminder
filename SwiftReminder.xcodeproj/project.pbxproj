@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C11B9EF1A3AEE6D001680B8 /* Salawat.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C11B9EE1A3AEE6D001680B8 /* Salawat.rtf */; };
+		4C5997EF1A3D6A820043C7FB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C5997EE1A3D6A820043C7FB /* Settings.bundle */; };
 		4C7F87031A311D9A0073F5E4 /* Salawat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C7F87021A311D9A0073F5E4 /* Salawat.plist */; };
 		4CE7C1FF19FB22FB000FF20E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7C1FE19FB22FB000FF20E /* Foundation.framework */; };
 		4CE7C20119FB22FB000FF20E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7C20019FB22FB000FF20E /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		4C11B9EE1A3AEE6D001680B8 /* Salawat.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Salawat.rtf; sourceTree = "<group>"; };
+		4C5997EE1A3D6A820043C7FB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4C7F87021A311D9A0073F5E4 /* Salawat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Salawat.plist; sourceTree = "<group>"; };
 		4CE7C1FB19FB22FB000FF20E /* SwiftReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE7C1FE19FB22FB000FF20E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 		4CE7C1F219FB22FB000FF20E = {
 			isa = PBXGroup;
 			children = (
+				4C5997EE1A3D6A820043C7FB /* Settings.bundle */,
 				4CF766021A3C344700BB0673 /* Muhammad2.png */,
 				4CF766001A3B31F800BB0673 /* Salawat.txt */,
 				4C7F87021A311D9A0073F5E4 /* Salawat.plist */,
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5997EF1A3D6A820043C7FB /* Settings.bundle in Resources */,
 				4CF766011A3B31F800BB0673 /* Salawat.txt in Resources */,
 				4C7F87031A311D9A0073F5E4 /* Salawat.plist in Resources */,
 				4C11B9EF1A3AEE6D001680B8 /* Salawat.rtf in Resources */,
