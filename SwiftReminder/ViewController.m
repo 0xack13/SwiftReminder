@@ -19,6 +19,17 @@
 {
     [super viewDidLoad];
     
+    BOOL changeBGColor = (BOOL)[[NSUserDefaults standardUserDefaults] valueForKey:@"colorId"];
+	
+    if(changeBGColor)
+    {
+        self.view.backgroundColor = [UIColor yellowColor];
+    } else {
+        self.view.backgroundColor = [UIColor redColor];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
     /*
 	
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
