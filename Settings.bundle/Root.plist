@@ -8,7 +8,7 @@
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Key</key>
-			<string>multi_preference</string>
+			<string>repeatTimer</string>
 			<key>DefaultValue</key>
 			<string>One</string>
 			<key>Title</key>
@@ -30,11 +30,11 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
+			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>multi value</string>
+			<string>بين صلوات اليوم فقط</string>
 			<key>Key</key>
-			<string>mvalue</string>
+			<string>betweePrayersOnly</string>
 			<key>DefaultValue</key>
 			<string>10</string>
 		</dict>

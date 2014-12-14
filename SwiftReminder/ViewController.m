@@ -18,17 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    BOOL changeBGColor = (BOOL)[[NSUserDefaults standardUserDefaults] valueForKey:@"colorId"];
-	
-    if(changeBGColor)
-    {
-        self.view.backgroundColor = [UIColor yellowColor];
-    } else {
-        self.view.backgroundColor = [UIColor redColor];
-    }
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];
+   
 
     /*
 	
@@ -72,7 +62,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self setupLocalNotifications];
+
+    
 }
 
 - (void)setupLocalNotifications {
