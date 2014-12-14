@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
+			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
 			<string>multi value</string>
 			<key>Key</key>
@@ -18,7 +18,7 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>خلفيه الصفحه</string>
+			<string>خلفيه الصفحه..</string>
 			<key>Key</key>
 			<string>colorId</string>
 			<key>DefaultValue</key>
