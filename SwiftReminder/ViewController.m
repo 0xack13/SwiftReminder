@@ -68,6 +68,11 @@
 
 - (void)setupLocalNotifications {
     
+    //Get timer
+    NSString *rTimer = [[NSUserDefaults standardUserDefaults] objectForKey:@"repeatTimer"];
+    //Convert NSString to int
+    int rTimerValue = rTimer;
+    
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Salawat" ofType:@"plist"]];
     NSLog(@"dictionary = %@", dictionary);
     
@@ -91,12 +96,12 @@
     
     // current time plus 10 secs
     NSDate *now = [NSDate date];
-    NSDate *date = [now dateByAddingTimeInterval:5];
+    NSDate *date = now;
     
     NSLog(@"now time: %@", now);
     //NSLog(@"fire time: %@", dateToFire);
     
-    NSDate *repeatTime = [date dateByAddingTimeInterval:4];
+    NSDate *repeatTime = [date dateByAddingTimeInterval:rTimerValue];
     localNotification.fireDate = repeatTime; //dateToFire;
     localNotification.alertBody = msg; //@"Time to get up!";
     localNotification.soundName = UILocalNotificationDefaultSoundName;

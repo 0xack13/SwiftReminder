@@ -96,15 +96,18 @@
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        
+        //Get timer
+        NSString *rTimer = [[NSUserDefaults standardUserDefaults] objectForKey:@"repeatTimer"];
+        //Convert NSString to int
+        int rTimerValue = rTimer;
         // current time plus 10 secs
         NSDate *now = [NSDate date];
-        NSDate *date = [now dateByAddingTimeInterval:2];
+        NSDate *date = now;
         
         NSLog(@"now time: %@", now);
         //NSLog(@"fire time: %@", dateToFire);
         
-        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:rTimerValue];
             localNotification.alertBody = msg; //@"Time to get up!";
             localNotification.soundName = UILocalNotificationDefaultSoundName;
             localNotification.applicationIconBadgeNumber = 1; // increment
